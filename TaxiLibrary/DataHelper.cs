@@ -85,11 +85,12 @@ namespace TaxiLibrary
             var str = "";
             foreach (var car in cars)
             {
-                str += $"{car.CarNum+1} ";
+                str += $"{car.Routes.Count} ";
                 foreach (var route in car.Routes)
                 {
                     str += $"{route.RouteName} ";
                 }
+                str = str.Trim();
                 str += "\n";
             }
             File.WriteAllText(filename, str);
